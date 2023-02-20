@@ -1,0 +1,10 @@
+---
+- name: Install, configure and run Sensu Go backend
+  hosts: backends
+  become: true
+  tasks:
+    - name: Install backend
+      include_role:
+        name: sensu.sensu_go.backend
+      vars:
+        version: 5.21.2
